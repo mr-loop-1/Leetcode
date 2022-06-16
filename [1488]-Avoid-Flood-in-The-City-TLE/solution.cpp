@@ -1,10 +1,7 @@
 vector<int> avoidFlood(vector<int>& rains) {
         
         map<int, int> full;
-        
-        // vector<int> fullIdx;
-        
-        // queue<int> dryIdx;
+
         list<int> dryIdx;
         
         vector<int> ans(rains.size());
@@ -15,10 +12,9 @@ vector<int> avoidFlood(vector<int>& rains) {
                 ans[i] = -1;
 
                 if(full.count(rains[i])) {
-                    // int fullIdx = (*found).second;
+                        
                     int fullIdx = full[rains[i]];
                     
-                    // cout << fullIdx << endl;
                     auto toFound = lower_bound(dryIdx.begin(), dryIdx.end(), fullIdx);
                     
                     if(toFound != dryIdx.end()) {
@@ -35,15 +31,6 @@ vector<int> avoidFlood(vector<int>& rains) {
                 dryIdx.push_back(i);
             }
             
-            
-//             for(auto p: full) {
-//                 cout << p.first << " " << p.second << " | ";
-//             }
-//             cout << endl;
-//             for(auto d:dryIdx) {
-//                 cout << d << " ";
-//             }
-//             cout << endl;
         }
         
         return ans;
