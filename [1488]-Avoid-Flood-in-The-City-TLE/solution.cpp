@@ -1,7 +1,4 @@
 vector<int> avoidFlood(vector<int>& rains) {
-        // set<int> full;
-        // vector<int> full;
-        // set<pair<int, int>> full;
         
         map<int, int> full;
         
