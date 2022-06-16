@@ -10,8 +10,8 @@ string longestPalindrome(string s) {
             mp[s[i]].push_back(i);
         }
         
-        vector<int> markIdx(s.size(), -1);
-        vector<int> mark(s.size(), 2);
+//         vector<int> markIdx(s.size(), -1);
+//         vector<int> mark(s.size(), 2);
         
         string ans;
         
@@ -27,8 +27,8 @@ string longestPalindrome(string s) {
                 
                 if(j==i+1) {
                     ans = s.substr(i, j-i+1);
-                        mark[i] = 1;
-                        markIdx[i] = j;
+                        // mark[i] = 1;
+                        // markIdx[i] = j;
                         break;
                 }
                 
@@ -41,31 +41,31 @@ string longestPalindrome(string s) {
                 
                 for(int k=i+1; k!=i+((j-i)/2)+1; k++) {
                     // cout << "0" << endl;
-                    if(mark[k]==0 && markIdx[k]==(j-k+i)) {
-                        // cout << "1" << endl;
-                        mark[i] = 0;
-                        markIdx[i] = j;
-                        break;
-                    }
-                    else if(mark[k]==1 && markIdx[k]==(j-k+i)) {
-                        // cout << "2" << endl;
-                        ans = s.substr(i, j-i+1);
-                        mark[i] = 1;
-                        markIdx[i] = j;
-                        break;
-                    }
+                    // if(mark[k]==0 && markIdx[k]==(j-k+i)) {
+                    //     // cout << "1" << endl;
+                    //     mark[i] = 0;
+                    //     markIdx[i] = j;
+                    //     break;
+                    // }
+                    // else if(mark[k]==1 && markIdx[k]==(j-k+i)) {
+                    //     // cout << "2" << endl;
+                    //     ans = s.substr(i, j-i+1);
+                    //     mark[i] = 1;
+                    //     markIdx[i] = j;
+                    //     break;
+                    // }
                     
                     if (s[k] != s[j-k+i]) {
                         // cout << "3" << endl;
-                        mark[i] = 0;
-                        markIdx[i] = j;
+                        // mark[i] = 0;
+                        // markIdx[i] = j;
                         break;
                     }
                     if(k==i+((j-i)/2)) {
                         // cout << "4" << endl;
                         ans = s.substr(i, j-i+1);
-                        mark[i] = 1;
-                        markIdx[i] = j;
+                        // mark[i] = 1;
+                        // markIdx[i] = j;
                     }
                 }
                 
